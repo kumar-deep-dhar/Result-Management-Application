@@ -1,0 +1,26 @@
+<a href="/" class="btn btn-info" style="margin-top: 5px;"> Back To HomePage </a>
+<h3>Teacher login</h3>
+<div class="teachLog">
+    <form method="POST" class="teachForm">
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Passoword</label>
+            <input type="password" name="password" id="password" class="form-control">
+            <br>
+            <input type="checkbox" style="width: 30px;" onclick="passcheck()">Show Password
+            <br>
+        </div>
+        <a> <button class="btn btn-primary">Login</button></a>
+    </form>
+</div>
+<script>
+    function passcheck() {
+        var x = document.getElementById("password");
+        if(x.type==="password")
+        {
+            x.type="text";
+        }        
+        else{
+            x.type="password";
+        }
+    }
+</script>

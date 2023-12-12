@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+<a href="/teacher/addstudent" class="btn btn-info" style="margin-top: 5px;"> Add Student </a>
+<div class="content">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Roll Number</th>
+                <th>Date of Birth</th>
+                <th>Score</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% students.forEach(student=>{ %>
+            
+                <tr class="head">
+                    <td><%= student.name %></td>
+                    <td><%= student.rollnumber %></td>
+                    <td><%= student.dob.toISOString().split('T')[0] %></td>
+                    <td><%= student.score %></td>
+                    <td>
+                        <a href="/teacher/edit/<%= student._id %> "><img style="margin: 0px 5px;" src="https://img.icons8.com/material-outlined/30/000000/edit.png"/></a>
+                        <a href="/teacher/delete/<%= student._id %> "><img style="margin: 0px 5px;" src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"/></a>
+                    </td>
+                </tr>
+            
+          <%  }); %>
+        </tbody>
+    </table>
+</div>
